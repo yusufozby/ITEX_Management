@@ -35,7 +35,7 @@ crossAxisAlignment: CrossAxisAlignment.start,
 
   children: [
    const SizedBox(height: 10,),
-   Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,children: [ Expanded(child: Column(
+    Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,children: [ const Expanded(child: Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
     Text('Sipariş No'),
@@ -60,6 +60,7 @@ crossAxisAlignment: CrossAxisAlignment.start,
 
  
          Text(model.aimedOrder.toString()),
+ 
   const  SizedBox(height: 15,),
      Text(model.plannedQty.toString()),
   const  SizedBox(height: 15,),
@@ -92,10 +93,10 @@ crossAxisAlignment: CrossAxisAlignment.start,
 const SizedBox(height: 20,),
 
 Transform.translate(offset: Offset(-8, 0),child: LinearPercentIndicator(
-barRadius: Radius.circular(5),
-  progressColor: (Color.fromRGBO(3, 148, 22, 1)),
+barRadius:const Radius.circular(5),
+  progressColor: (const Color.fromRGBO(3, 148, 22, 1)),
   percent: 0.2,
-  center: Text('${(100).toInt()}',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+  center: Text('${(100).toInt()}',style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
   lineHeight: 30,
   backgroundColor: Theme.of(context).colorScheme.background,
 
