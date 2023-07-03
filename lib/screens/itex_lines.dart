@@ -19,7 +19,7 @@ class ITEXLinesScreen extends StatelessWidget {
       child: Column(children: [
             
 const   Text('Hatlar',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)  ,
-Divider(color: Theme.of(context).colorScheme.onBackground.withOpacity(0.2),height: 3,endIndent: 0,
+Divider(color: Theme.of(context).colorScheme.onBackground.withOpacity(0.3),height: 10,endIndent: 0,
       ), 
        
       ],),

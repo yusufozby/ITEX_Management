@@ -7,7 +7,7 @@ import 'dart:math';
 
 import 'package:uuid/uuid.dart';
 
-final  uuid = Uuid();
+final  uuid =  Uuid();
 
 class ITEXLine {
   final String id;

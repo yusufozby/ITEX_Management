@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/widgets/ITEX_modelItem.dart';
 
 class ITEXModelScreen extends StatelessWidget {
   const ITEXModelScreen({super.key});
@@ -6,7 +7,10 @@ class ITEXModelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('ITEX Management'),
+        centerTitle: false,
+      ),
       body: Padding(padding:const EdgeInsets.all(18),
       child: Column(
         children: [
@@ -54,44 +58,49 @@ class ITEXModelScreen extends StatelessWidget {
            
 
           ],),
-             DataTable(  
-              columns: [  
-                DataColumn(label: Text(  
-                    'ID',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
-                )),  
-                DataColumn(label: Text(  
-                    'Name',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
-                )),  
-                DataColumn(label: Text(  
-                    'Profession',  
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)  
-                )),  
-              ],  
-              rows: [  
-                DataRow(cells: [  
-                  DataCell(Text('1')),  
-                  DataCell(Text('Stephen')),  
-                  DataCell(Text('Actor')),  
-                ]),  
-                DataRow(cells: [  
-                  DataCell(Text('5')),  
-                  DataCell(Text('John')),  
-                  DataCell(Text('Student')),  
-                ]),  
-                DataRow(cells: [  
-                  DataCell(Text('10')),  
-                  DataCell(Text('Harry')),  
-                  DataCell(Text('Leader')),  
-                ]),  
-                DataRow(cells: [  
-                  DataCell(Text('15')),  
-                  DataCell(Text('Peter')),  
-                  DataCell(Text('Scientist')),  
-                ]),  
-              ],  
-            ),  
+const SizedBox(height: 20,),
+Container(
+  width: double.infinity,
+  decoration: BoxDecoration(border: Border.all(width: 3,color:Colors.grey),color: Colors.blue,borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20))),
+  
+  padding:const EdgeInsets.symmetric(horizontal: 8,vertical: 6),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: [
+      Expanded( child: Text('No',style: TextStyle(fontSize: 12,color: Theme.of(context).colorScheme.background),),),
+          Expanded(flex: 3,child:   Text('Operasyon Adı',style: TextStyle(color: Theme.of(context).colorScheme.background,fontSize: 11,fontWeight: FontWeight.bold),) ,
+          
+    ),
+              Expanded(flex: 2,child: 
+              Center(
+                child:Text('Makine Adı',style: TextStyle(color: Theme.of(context).colorScheme.background,fontSize: 11,fontWeight: FontWeight.bold),textAlign: TextAlign.center,) ,
+              )
+              
+              ),
+             const SizedBox(width: 10,),
+                  Expanded(flex: 3,child: 
+                  Center(
+                    child:    Text('STD',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),textAlign: TextAlign.center,)),
+                  )
+  ,
+                      Expanded(flex: 2,child:
+                      
+                      Center(
+                        child:Text('Aktivasyon Kodu',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),textAlign:TextAlign.center,) ,
+                      )
+                       ),
+                          Expanded(flex: 2,child: 
+                          Center(
+                           child: Text('Reel Adet',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background)
+                          )
+                        )),
+                              Expanded(flex: 3,child: Text('İplik Kesme Sayısı',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),)),
+    ],
+  ),
+),
+
+           const ITEXModelItem(),
+          const  ITEXModelItem()
         ],
       ),
       ) 

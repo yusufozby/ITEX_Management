@@ -15,7 +15,7 @@ void main() {
   );
   
   runApp(
-    ProviderScope(child: const App(),)
+  const  ProviderScope(child: const App(),)
   );
 }
 

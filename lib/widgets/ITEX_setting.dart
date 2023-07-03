@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:itmtechsoft/models/ITEXSetting.dart';
-import 'package:itmtechsoft/screens/itex_lines.dart';
+
 
 class ITEXSettingItem extends StatelessWidget {
   const ITEXSettingItem({super.key,required this.setting});
@@ -21,7 +21,7 @@ class ITEXSettingItem extends StatelessWidget {
   child: ListTile(
         title:
  Center(
-  child:  Text(setting.title,style:const TextStyle(letterSpacing: 0.5,fontSize: 16),) ,
+  child:  Text(setting.title,style:const TextStyle(letterSpacing: 0.5,fontSize: 16),textAlign: TextAlign.center,) ,
 ),
 trailing:const SizedBox(width: 60,),
 contentPadding:const EdgeInsets.all(20),
