@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:itmtechsoft/models/ITEXModel.dart';
+import 'package:itmtechsoft/models/ITEXLine.dart';
+import 'package:itmtechsoft/screens/itex_model.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class ITEXDetailInfo extends StatelessWidget {
   const ITEXDetailInfo({super.key,required this.model});
-  final ITEXModel model;
+  final ITEXLine model;
 
   @override
   Widget build(BuildContext context) {
-    return 
-      Container(
+    return InkWell(
+           onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>const ITEXModelScreen()));
+           },
+
+      child:      Container(
   color: Theme.of(context).colorScheme.background,
 
 width: double.infinity,
@@ -20,57 +25,60 @@ children: <Widget>[
  Expanded(child:   Container(
     height:200,
     
-decoration: BoxDecoration(border: Border.all(color: Colors.black,width: 1.5)),
-child:null,
-margin: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+decoration: BoxDecoration(border: Border.all(color:const Color.fromRGBO(0,255,0, 1),width: 2)),
 
+margin: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+child:const Image(image: AssetImage('assets/fix.jpeg'))
   ),
  ),
- 
+
  
 Expanded(child: 
 
  Column(
-crossAxisAlignment: CrossAxisAlignment.start,
+
 
   children: [
    const SizedBox(height: 10,),
     Row(mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,children: [ const Expanded(child: Column(
     crossAxisAlignment: CrossAxisAlignment.start,
+   
     children: [
-    Text('Sipariş No'),
+  
+    Text('Sipariş No',overflow: TextOverflow.ellipsis,style: TextStyle(color: Color.fromRGBO(139,0,0,1),fontWeight: FontWeight.w500)),
     SizedBox(height: 15,),
-    Text('Müşteri Adı'),
+    Text('Müşteri Adı',overflow: TextOverflow.ellipsis,style: TextStyle(color: Color.fromRGBO(139,0,0,1),fontWeight: FontWeight.w500)),
         
     SizedBox(height: 15,),
-    Text('Plan Adet'),
+    Text('Plan Adet',overflow: TextOverflow.ellipsis,style: TextStyle(color: Color.fromRGBO(139,0,0,1),fontWeight:FontWeight.w500)),
       
     SizedBox(height: 15,),
-    Text('Gerçek Adet'),
+    Text('Gerçek Adet',overflow: TextOverflow.ellipsis,style: TextStyle(color: Color.fromRGBO(139,0,0,1),fontWeight:FontWeight.w500)),
        SizedBox(height: 15,),
-    Text('Planlanan Başlama Tarihi'),
+    Text('Planlanan Başlama Tarihi : ',overflow: TextOverflow.ellipsis,style: TextStyle(color: Color.fromRGBO(139,0,0,1),fontWeight: FontWeight.w500)),
        SizedBox(height: 15,),
-    Text('Planlanan Bitiş Tarihi'),
+    Text('Planlanan Bitiş Tarihi : ',overflow: TextOverflow.ellipsis,style: TextStyle(color: Color.fromRGBO(139,0,0,1),fontWeight:FontWeight.w500)),
   ],
   ), 
   ),
+ const SizedBox(width: 40,),   
       Expanded(child: Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
 
- 
-         Text(model.aimedOrder.toString()),
+
+         Text(model.aimedOrder.toString(),style: const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(0,0,139,1)),overflow: TextOverflow.ellipsis,),
  
   const  SizedBox(height: 15,),
-     Text(model.plannedQty.toString()),
+     Text(model.plannedQty.toString(),style: const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(0,0,139,1)),overflow: TextOverflow.ellipsis,),
   const  SizedBox(height: 15,),
-     Text(model.lastDate.toString()),
+     Text(model.lastDate.toString(),style: const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(0,0,139,1)),overflow: TextOverflow.ellipsis,),
   const SizedBox(height: 15,),
-     Text(model.orderNo.toString()),
+     Text(model.orderNo.toString(),style: const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(0,0,139,1)),overflow: TextOverflow.ellipsis,),
   const SizedBox(height: 15,),
-     Text(model.plannedQty.toString()),
+     Text(model.plannedQty.toString(),style: const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(0,0,139,1)),overflow: TextOverflow.ellipsis,),
   const SizedBox(height: 15,),
-       Text(model.dailyGoal.toString()),
+       Text(model.dailyGoal.toString(),style: const TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(0,0,139,1)),overflow: TextOverflow.ellipsis,),
   const SizedBox(height: 15,),
 
  
@@ -92,9 +100,9 @@ crossAxisAlignment: CrossAxisAlignment.start,
 
 const SizedBox(height: 20,),
 
-Transform.translate(offset: Offset(-8, 0),child: LinearPercentIndicator(
+Transform.translate(offset:const Offset(-8, 0),child: LinearPercentIndicator(
 barRadius:const Radius.circular(5),
-  progressColor: (const Color.fromRGBO(3, 148, 22, 1)),
+  progressColor: (const Color.fromRGBO(0,255,0, 1)),
   percent: 0.2,
   center: Text('${(100).toInt()}',style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
   lineHeight: 30,
@@ -114,7 +122,9 @@ barRadius:const Radius.circular(5),
 
 ],
 ),
-) ;
+),
+    )
+  ;
     
   }
 }

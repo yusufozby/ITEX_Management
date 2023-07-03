@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:itmtechsoft/data/dummy_data.dart';
-import 'package:itmtechsoft/widgets/ITEX_Item.dart';
+import 'package:itmtechsoft/widgets/ITEX_line.dart';
 
-class ITEXModels extends StatelessWidget {
-  const ITEXModels({super.key});
+class ITEXLinesScreen extends StatelessWidget {
+  const ITEXLinesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,10 @@ Divider(color: Theme.of(context).colorScheme.onBackground.withOpacity(0.2),heigh
   ListView.builder(
   physics:const NeverScrollableScrollPhysics(),
   shrinkWrap: true,
-  itemBuilder: (ctx,index)=>ITEXItem(model:ITEXModelsList[index] ),
-  itemCount: ITEXModelsList.length,)  
+  itemBuilder: (ctx,index)=>ITEXLineItem(model:ITEXModelsList[index] ),
+  itemCount: ITEXModelsList.length,)  ,
+const SizedBox(height: 20,)
+
  ],
 
         

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:itmtechsoft/screens/itex_models.dart';
+import 'package:itmtechsoft/screens/itex_lines.dart';
 
 class ITEXSoft extends StatelessWidget {
   const ITEXSoft({super.key});
@@ -66,7 +66,7 @@ width: 2,
     ),
     
     onTap: (){
-      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const ITEXModels()));
+      Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const ITEXLinesScreen()));
     },
 
 
@@ -87,7 +87,7 @@ Card(
   child: ListTile(
         title:
 
-const Center(child:  Text('İğne Hat Tanımlama',style: TextStyle(letterSpacing: 0.5,fontSize: 14),) ,),
+const Center(child:  Text('İğne Hat Tanımlama',style: TextStyle(letterSpacing: 0.5,fontSize: 16),) ,),
 
          trailing:const SizedBox(width: 60,),
         
@@ -123,7 +123,7 @@ width: 2,
 
     ),
     onTap: (){
- Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const ITEXModels()));
+ Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const ITEXLinesScreen()));
     },
 
 

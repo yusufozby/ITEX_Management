@@ -9,7 +9,7 @@ import 'package:uuid/uuid.dart';
 
 final  uuid = Uuid();
 
-class ITEXModel {
+class ITEXLine {
   final String id;
   final int quantity;
   final int lastDate;
@@ -33,7 +33,7 @@ double get totalPercent {
 
 
 
-ITEXModel({
+ITEXLine({
   required this.aimedOrder,
   required this.quantity,
   required this.lastDate,

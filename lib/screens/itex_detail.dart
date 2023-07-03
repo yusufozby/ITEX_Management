@@ -21,10 +21,13 @@ class ITEXDetail extends StatelessWidget {
 const Center(
   child:   Text('Üretim Yönetimi',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)  ,
  ),
-ListView.builder(    shrinkWrap: true,physics:const NeverScrollableScrollPhysics(),itemBuilder: (ctx,index)=>ITEXDetailInfo(model: ITEXModelsList[index],),itemCount: ITEXModelsList.length)
+ListView.builder(    shrinkWrap: true,
+physics:const NeverScrollableScrollPhysics(),
+itemBuilder: (ctx,index)=>ITEXDetailInfo(model: ITEXModelsList[index],),
+itemCount: ITEXModelsList.length)
 
-
-
+,
+const SizedBox(height: 20,)
 
  ]
     )
