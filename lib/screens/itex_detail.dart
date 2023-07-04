@@ -4,7 +4,8 @@ import 'package:itmtechsoft/widgets/itex_detail_info.dart';
 
 
 class ITEXDetail extends StatelessWidget {
-  const ITEXDetail({super.key});
+  const ITEXDetail({super.key,required this.option});
+  final Options option;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ const Center(
  ),
 ListView.builder(    shrinkWrap: true,
 physics:const NeverScrollableScrollPhysics(),
-itemBuilder: (ctx,index)=>ITEXDetailInfo(model: ITEXModelsList[index],),
+itemBuilder: (ctx,index)=>ITEXDetailInfo(model: ITEXModelsList[index],option: option,),
 itemCount: ITEXModelsList.length)
 
 ,

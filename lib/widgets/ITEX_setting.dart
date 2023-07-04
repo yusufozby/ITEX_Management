@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import 'package:itmtechsoft/models/ITEXSetting.dart';
 
 
 class ITEXSettingItem extends StatelessWidget {
-  const ITEXSettingItem({super.key,required this.setting});
+  const ITEXSettingItem({super.key,required this.setting,required});
   final ITEXSetting setting;
+
 
 
   @override

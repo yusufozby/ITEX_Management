@@ -31,13 +31,23 @@ class App extends StatelessWidget {
       seedColor:const Color.fromRGBO(255,40,96, 1),
       primary:const Color.fromRGBO(255,90,96, 1),
     ),
+tabBarTheme: TabBarTheme(
+
+),
      appBarTheme:const AppBarTheme(
           backgroundColor: Color.fromRGBO(0, 0, 139, 1),
           systemOverlayStyle: SystemUiOverlayStyle(
 statusBarColor: Color.fromRGBO(0, 0, 110, 1)
-          )
+
+
+          ),
+
+
+          
      )),
  home: const Login(),
+
+ 
 );
   }
 }

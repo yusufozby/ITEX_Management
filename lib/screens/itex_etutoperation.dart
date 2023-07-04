@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:itmtechsoft/widgets/ITEX_modelItem.dart';
+import 'package:itmtechsoft/widgets/ITEX_operationItem.dart';
 
-class ITEXModelScreen extends StatelessWidget {
-  const ITEXModelScreen({super.key});
+class ITEXEtutOperationScreen extends StatelessWidget {
+  const ITEXEtutOperationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       appBar: AppBar(
-        title:const Text('ITEX Management'),
-        centerTitle: false,
+        title:const Text("ITEX Management"),
       ),
-      body: Padding(padding:const EdgeInsets.all(18),
+         body: Padding(padding:const EdgeInsets.all(18),
       child: Column(
         children: [
           Row(children: [
@@ -22,7 +21,6 @@ class ITEXModelScreen extends StatelessWidget {
             const SizedBox(width: 40,),
           const  Expanded(child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-           
             children:
           
           
@@ -59,8 +57,7 @@ class ITEXModelScreen extends StatelessWidget {
            
 
           ],),
-const SizedBox(height: 20,),
-Container(
+const SizedBox(height: 20,),         Container(
   width: double.infinity,
   decoration: BoxDecoration(border: Border.all(width: 3,color:Colors.grey),color: Colors.blue,borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20))),
   
@@ -69,48 +66,39 @@ Container(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
       Expanded( child: Text('No',style: TextStyle(fontSize: 12,color: Theme.of(context).colorScheme.background),),),
-          Expanded(flex: 3,child:   Text('Operasyon Adı',style: TextStyle(color: Theme.of(context).colorScheme.background,fontSize: 11,fontWeight: FontWeight.bold),) ,
+          Expanded(child:   Text('Operasyon Adı',style: TextStyle(color: Theme.of(context).colorScheme.background,fontSize: 11,fontWeight: FontWeight.bold),) ,
           
     ),
-              Expanded(flex: 2,child: 
+              Expanded(child: 
               Center(
                 child:Text('Makine Adı',style: TextStyle(color: Theme.of(context).colorScheme.background,fontSize: 11,fontWeight: FontWeight.bold),textAlign: TextAlign.center,) ,
               )
               
               ),
-             const SizedBox(width: 10,),
-                  Expanded(flex: 3,child: 
-                  Center(
-                    child:    Text('STD',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),textAlign: TextAlign.center,)),
-                  )
-  ,
-                      Expanded(flex: 2,child:
-                      
-                      Center(
-                        child:Text('Aktivasyon Kodu',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),textAlign:TextAlign.center,) ,
-                      )
-                       ),
-                          Expanded(flex: 2,child: 
-                          Center(
-                           child: Text('Reel Adet',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background)
-                          )
-                        )),
-                              Expanded(flex: 3,child: Text('İplik Kesme Sayısı',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),)),
+           
+                  Expanded(child: 
+                    Text('STD',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),textAlign: TextAlign.center,)),
+                  
+  
+                    
     ],
   ),
 ),
 
-           const ITEXModelItem(),
-          const  ITEXModelItem(),
-          
-   
-        ],
+  
+   const  Column(
+      children: [
+     ITEXEtutOperation(),
+        ITEXEtutOperation(),
+]),
+
+
+      ],
+    )
+        )
       
-      ),
-
-      ) 
-
-
+      
+    
     );
   }
 }

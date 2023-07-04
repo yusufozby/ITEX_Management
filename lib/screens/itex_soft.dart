@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:itmtechsoft/screens/itex_lines.dart';
+import 'package:itmtechsoft/screens/needle_problemlist.dart';
 
 class ITEXSoft extends StatelessWidget {
   const ITEXSoft({super.key});
@@ -26,7 +27,7 @@ Card(
   child: ListTile(
         title:
 const Center(
-  child:  Text('İğne Hat Tanımlama',style: TextStyle(letterSpacing: 0.5,fontSize: 14),) ,
+  child:  Text('Hat Tanımlama',style: TextStyle(letterSpacing: 0.5,fontSize: 14),) ,
 ),
 
 
@@ -87,7 +88,7 @@ Card(
   child: ListTile(
         title:
 
-const Center(child:  Text('İğne Hat Tanımlama',style: TextStyle(letterSpacing: 0.5,fontSize: 16),) ,),
+const Center(child:  Text('Makina Arıza Listesi',style: TextStyle(letterSpacing: 0.5,fontSize: 16),) ,),
 
          trailing:const SizedBox(width: 60,),
         
@@ -124,6 +125,62 @@ width: 2,
     ),
     onTap: (){
  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const ITEXLinesScreen()));
+    },
+
+
+ 
+  ),
+),
+Card(
+  margin:const EdgeInsets.all(0),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(5),
+    
+
+  ),
+
+  elevation: 2,
+  shadowColor: Theme.of(context).colorScheme.background,
+  child: ListTile(
+        title:
+
+const Center(child:  Text('İğne  Problem Listesi',style: TextStyle(letterSpacing: 0.5,fontSize: 16),) ,),
+
+         trailing:const SizedBox(width: 60,),
+        
+    
+    
+    contentPadding:const EdgeInsets.all(20),
+    leading: Row(
+      mainAxisSize: MainAxisSize.min,
+    
+      children: [
+
+          
+
+      
+        
+       
+        Container(
+      color:const Color.fromRGBO(0, 0, 139, 1),
+      height:80,
+    
+width: 2,
+    ),
+  const Padding(padding: EdgeInsets.only(left: 20),
+  child:   Image(image: AssetImage('assets/fix.jpeg')) ,
+  
+  ) ,
+
+
+
+
+
+      ],
+
+    ),
+    onTap: (){
+ Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const NeedleProblemListScreen()));
     },
 
 

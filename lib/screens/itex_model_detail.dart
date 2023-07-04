@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/screens/itex_model_list.dart';
+import 'package:itmtechsoft/widgets/ITEX_operation.dart';
 
 class ITEXModelDetailScreen extends StatelessWidget {
   const ITEXModelDetailScreen({super.key});
@@ -6,9 +8,13 @@ class ITEXModelDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>const ITEXModelListScreen()));
+      },backgroundColor: Theme.of(context).colorScheme.primary,child:const Icon(Icons.add,size: 35,),),
       body:Padding(
   padding:const  EdgeInsets.all(16),
   child:   Column(children: <Widget>[
+  
 const  SizedBox(height: 50,),
   const  Text('Operasyon Bilgileri',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)  ,
   const Divider(color: Colors.grey,height: 15,),
@@ -62,23 +68,28 @@ const SizedBox(height: 30,)
           
     ),
               Expanded(child: 
-              Center(
-                child:Text('Görev adı',style: TextStyle(color: Theme.of(context).colorScheme.background,fontSize: 11,fontWeight: FontWeight.bold),textAlign: TextAlign.center,) ,
-              )
+            Center(
+              child:Text('Görev adı',style: TextStyle(color: Theme.of(context).colorScheme.background,fontSize: 11,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)  ,
+            )
+                
+                
+              
               
               ),
              const SizedBox(width: 10,),
                   Expanded(child: 
-                  Center(
-                    child:    Text('Sil',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),textAlign: TextAlign.center,)),
-                  )
-  ,
-                   
+                
+                        Text('Sil',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold,color: Theme.of(context).colorScheme.background),textAlign: TextAlign.center,)),
+                  
+  
+               
    
                              
     ],
   ),
 ),
+ const  ITEXOperation() ,
+
 
      
       ]

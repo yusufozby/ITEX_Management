@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/data/dummy_data.dart';
 import 'package:itmtechsoft/models/ITEXLine.dart';
-import 'package:itmtechsoft/screens/itex_model.dart';
+
 import 'package:percent_indicator/percent_indicator.dart';
 
 class ITEXDetailInfo extends StatelessWidget {
-  const ITEXDetailInfo({super.key,required this.model});
+  const ITEXDetailInfo({super.key,required this.model,required this.option});
   final ITEXLine model;
+  final Options option;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
            onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>const ITEXModelScreen()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>navigatorOptions[option]!));
            },
 
       child:      Container(
@@ -104,7 +106,7 @@ Transform.translate(offset:const Offset(-8, 0),child: LinearPercentIndicator(
 barRadius:const Radius.circular(5),
   progressColor: (const Color.fromRGBO(0,255,0, 1)),
   percent: 0.2,
-  center: Text('${(100).toInt()}',style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+  center: Text('${(20).toInt()}',style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
   lineHeight: 30,
   backgroundColor: Theme.of(context).colorScheme.background,
 

@@ -7,7 +7,7 @@ class ITEXModelItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onLongPress: (){
   Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>const ITEXModelDetailScreen()));
       },
     child:    Container(
