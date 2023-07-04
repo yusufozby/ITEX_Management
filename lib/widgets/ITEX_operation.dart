@@ -30,7 +30,7 @@ void changePassword(){
     return  Container(
       width: width,
   
-      child:const Text('Operatörü operasyon istediğinize emin misiniz ?')
+      child:const Text('Operatörü silmek istediğinize emin misiniz ?')
     );
    }),
     actions: [
