@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/screens/etut_start_screen.dart';
 
 class ITEXOperationDetailItem extends StatelessWidget {
   const ITEXOperationDetailItem({super.key});
@@ -21,7 +22,9 @@ class ITEXOperationDetailItem extends StatelessWidget {
         
          ),
         Expanded(child:
-        Center(child: ElevatedButton(onPressed: (){}, child: Text('Etüt Başla'.toUpperCase(),style:const TextStyle(fontSize: 13),))  ,)
+        Center(child: ElevatedButton(onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>const ITEXEtutStartScreen()));
+        }, child: Text('Etüt Başla'.toUpperCase(),style:const TextStyle(fontSize: 13),))  ,)
         ,
         ),
 

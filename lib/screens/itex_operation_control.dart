@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:itmtechsoft/screens/itex_quality_detail_report.dart';
+import 'package:itmtechsoft/screens/itex_employee_detail.dart';
 
-class ITEXQualityControlScreen extends StatelessWidget {
-
-const ITEXQualityControlScreen({super.key});
+class ITEXOperationControlScreen extends StatelessWidget {
+  const ITEXOperationControlScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title:const Text('ITEX Management'),
         ),
@@ -25,10 +24,10 @@ const ITEXQualityControlScreen({super.key});
                     
                     indicatorColor: Colors.red,
                     tabs: [
-                      Tab(child: Text('Detay tamir raporu'.toUpperCase(),textAlign: TextAlign.center)),
-                      Tab(child: Text('operatör tamir raporu'.toUpperCase(),textAlign: TextAlign.center,),),
+                      Tab(child: Text('Aktif operasyonlar'.toUpperCase())),
+                      Tab(child: Text('Çalışan Detay'.toUpperCase()),),
                      
-                    ],  
+                    ],
                   ),
                 ),
               
@@ -38,11 +37,9 @@ const ITEXQualityControlScreen({super.key});
           const    Expanded(
                 child: TabBarView(
                   children: [
-                     ITEXQualityDetailReportScreen(),
+                 
                     Icon(Icons.directions_transit),
-              
-              
-           
+                  ITEXEmployeeDetail(),
                   ],
                 ),
               ),
@@ -50,6 +47,5 @@ const ITEXQualityControlScreen({super.key});
           ),
         ),
       );
-    
   }
 }

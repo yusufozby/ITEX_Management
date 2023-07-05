@@ -11,12 +11,9 @@ class ITEXDetailInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-           onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>navigatorOptions[option]!));
-           },
+    return
 
-      child:      Container(
+          Container(
   color: Theme.of(context).colorScheme.background,
 
 width: double.infinity,
@@ -35,9 +32,11 @@ child:const Image(image: AssetImage('assets/fix.jpeg'))
  ),
 
  
-Expanded(child: 
-
- Column(
+Expanded(child: InkWell(
+  onTap: (){
+    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>navigatorOptions[option]!));
+  },
+  child: Column(
 
 
   children: [
@@ -115,7 +114,10 @@ barRadius:const Radius.circular(5),
 
     
   ],
+ ),
  )
+
+ 
 )
  
    
@@ -124,8 +126,8 @@ barRadius:const Radius.circular(5),
 
 ],
 ),
-),
-    )
+)
+    
   ;
     
   }

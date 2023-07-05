@@ -14,11 +14,11 @@ child: Container(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Center(
-        child: Text('data'),
+        child: Text('07/07/2023',style: TextStyle(color: Colors.brown,fontWeight: FontWeight.bold,fontSize: 16),),
 
       ),
       
-      const SizedBox(height: 10,),
+     SizedBox(height: 10,),
       Row(
         
         children: [
@@ -30,7 +30,7 @@ child: Container(
       Text('Marka ve Makine No',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold)),
         ],
        ),
-       const SizedBox(width: 80,),
+     SizedBox(width: 80,),
        Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
