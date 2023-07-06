@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/screens/ITEXPersonal.dart';
 
 class ITEXEmployeeDetailItem extends StatelessWidget {
   const ITEXEmployeeDetailItem({super.key});
@@ -19,7 +20,7 @@ class ITEXEmployeeDetailItem extends StatelessWidget {
       InkWell(
 
         onTap: () {
-          
+          Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => ITEXPersonal()));
         },
         child: const Padding(padding: 
       EdgeInsets.all(10),
@@ -58,7 +59,7 @@ children: [
       Padding(padding: 
       EdgeInsets.symmetric(
      
-       horizontal: 20
+       horizontal: 7
         
         ),
         child:    Row
@@ -68,19 +69,19 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
 children: [
 Column(
   children: [
-    Text('Günlük Performans',style: TextStyle(fontWeight: FontWeight.bold,height: 2,fontSize: 12),),
+    Text('Günlük Performans',style: TextStyle(fontWeight: FontWeight.bold,height: 2,fontSize: 12),overflow: TextOverflow.ellipsis,),
     Text('0%'),
   ],
 ),
 Column(
   children: [
- Text('Hesaplanan Performans',style: TextStyle(fontWeight: FontWeight.bold,height: 2,fontSize: 12),),
+ Text('Hesaplanan Performans',style: TextStyle(fontWeight: FontWeight.bold,height: 2,fontSize: 12),overflow: TextOverflow.ellipsis),
     Text('0%'),
   ],
 ),
 Column(
   children: [
- Text('Anlık Verim',style: TextStyle(fontWeight: FontWeight.bold,height: 2,fontSize: 12),),
+ Text('Anlık Verim',style: TextStyle(fontWeight: FontWeight.bold,height: 2,fontSize: 12),overflow: TextOverflow.ellipsis),
     Text('0%'),
   ],
 )
