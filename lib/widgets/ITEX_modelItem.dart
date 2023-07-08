@@ -6,6 +6,8 @@ class ITEXModelItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    bool responsive = MediaQuery.of(context).size.width >  320 ;
     return InkWell(
       onLongPress: (){
   Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>const ITEXModelDetailScreen()));
@@ -16,34 +18,34 @@ class ITEXModelItem extends StatelessWidget {
       
       children: [
         Container(
-          padding: EdgeInsets.all(9),
+          padding: const EdgeInsets.symmetric(vertical:9),
           child:    Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(child:
             
             
-             Text('1',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),)) ,
+             Text('1',style: TextStyle(fontSize: responsive ? 11 : 9,fontWeight: FontWeight.bold),)) ,
              Expanded(flex: 3,child:
          
-              Text('1.OMUZ-ALMLEEEEET',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,) ,
+              Text('1.OMUZ-ALMLEEEEET',style: TextStyle(fontSize: responsive ? 11 : 9,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,) ,
              
              
               ),
               Expanded(flex: 3,child: 
               
-            Text('OVERLOK(4 ip)',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,) ,
+            Text('OVERLOK(4 ip)',style: TextStyle(fontSize: responsive ? 11 : 9,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,) ,
               
               ),
-               Expanded(flex: 2,child: Text('0.23',style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),)),
+               Expanded(flex: 2,child: Text('0.23',style: TextStyle(fontSize: responsive ? 11 : 9,fontWeight: FontWeight.bold),)),
                 Expanded(child: 
                
-                  Text('312',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),) ,
+                  Text('312',style: TextStyle(fontSize: responsive ? 11 : 9,fontWeight: FontWeight.bold),) ,
                 
                 ),
                  Expanded(flex: 2,child: 
                   Center(
-                  child:Text('251',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),) ,
+                  child:Text('251',style: TextStyle(fontSize: responsive ? 11 : 9,fontWeight: FontWeight.bold),) ,
                 )
                  
               ),
@@ -57,7 +59,7 @@ class ITEXModelItem extends StatelessWidget {
              decoration: BoxDecoration(
            
             
-               borderRadius: BorderRadius.all( Radius.circular(12.5)),
+               borderRadius:const BorderRadius.all( Radius.circular(12.5)),
                border: Border.all(
              
                  width: 1.0,
@@ -65,11 +67,11 @@ class ITEXModelItem extends StatelessWidget {
              ),
              child: 
              
-             Text('+',style: TextStyle(fontSize: 18),),
+           const  Text('+',style: TextStyle(fontSize: 18),),
            ),
-           SizedBox(width: 3,),
-           Text('0'),
-           SizedBox(width: 3,),
+         const  SizedBox(width: 3,),
+         const  Text('0'),
+          const SizedBox(width: 3,),
            Container(
                         alignment: Alignment.center,
              width: 25.0,
@@ -77,7 +79,7 @@ class ITEXModelItem extends StatelessWidget {
              decoration: BoxDecoration(
            
             
-               borderRadius: BorderRadius.all( Radius.circular(12.5)),
+               borderRadius:const BorderRadius.all( Radius.circular(12.5)),
                border: Border.all(
              
                  width: 1.0,
@@ -85,7 +87,7 @@ class ITEXModelItem extends StatelessWidget {
              ),
              child: 
              
-             Text('-',style: TextStyle(fontSize: 18),),
+        const     Text('-',style: TextStyle(fontSize: 18),),
            ),
 
                     ],
@@ -96,7 +98,7 @@ class ITEXModelItem extends StatelessWidget {
         ) ,
         ),
     
-        Divider(color: Colors.grey,height: 0,)
+   const     Divider(color: Colors.grey,height: 0,)
       ],
     ),
     ),

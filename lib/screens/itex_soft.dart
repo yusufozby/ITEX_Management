@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:itmtechsoft/screens/itex_lines.dart';
+import 'package:itmtechsoft/screens/machine_problemlist.dart';
 import 'package:itmtechsoft/screens/needle_problemlist.dart';
 
 class ITEXSoft extends StatelessWidget {
@@ -124,7 +125,7 @@ width: 2,
 
     ),
     onTap: (){
- Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const ITEXLinesScreen()));
+ Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const MachineProblemListScreen()));
     },
 
 

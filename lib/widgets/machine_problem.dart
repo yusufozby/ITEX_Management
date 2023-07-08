@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/screens/machine_problem_info.dart';
 import 'package:itmtechsoft/screens/needle_problem_info.dart';
 
 
-class NeedleProblem extends StatelessWidget {
-  const NeedleProblem({super.key});
+class MachineProblem extends StatelessWidget {
+  const MachineProblem({super.key});
   
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ child: Container(
                       Text('Bant No',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold),),
       Text('Makine Adı',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold)),
       Text('Marka ve Makine No',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold)),
+      Text('Durma Sebebi',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold)),
         ],
        ),
      SizedBox(width: 80,),
@@ -38,6 +40,7 @@ child: Container(
        Text('BANT 04',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold,color: Color.fromRGBO(0, 0,139, 1)),),
       Text('DÜZ MAKİNA',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold,color: Color.fromRGBO(0, 0,139, 1))),
       Text('JUKİ - 253',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold,color: Color.fromRGBO(0, 0,139, 1))),
+        Text('Makine Ayarı',style: TextStyle(height: 1.5,fontWeight: FontWeight.bold,color: Color.fromRGBO(0, 0,139, 1))),
         ],
        ),
        
@@ -52,7 +55,7 @@ child: Container(
   
 ),
       onTap: (){
- Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>const  NeedleProblemInfoScreen() ));
+ Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx) =>const  MachineProblemInfoScreen() ));
   },
   ));
 

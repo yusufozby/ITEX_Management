@@ -11,7 +11,9 @@ class ITEXSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
- body:Padding(
+ body:
+ SingleChildScrollView(
+  child: Padding(
   padding: const EdgeInsets.all(7),
   child:   Column(children: <Widget>[
   const SizedBox(height: 50,),
@@ -24,7 +26,10 @@ class ITEXSettings extends StatelessWidget {
 
  ],),
  )
+  ,
+ )
  
+
 
     );
   }

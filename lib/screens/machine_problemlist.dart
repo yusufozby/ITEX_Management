@@ -2,22 +2,25 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/widgets/machine_problem.dart';
 import 'package:itmtechsoft/widgets/needle_problem.dart';
 
-class NeedleProblemListScreen extends StatelessWidget {
-  const NeedleProblemListScreen({super.key});
+class MachineProblemListScreen extends StatelessWidget {
+  const MachineProblemListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+   
+      ),
  body:
    Column(children: <Widget>[
   const SizedBox(height: 50,),
-  const  Text('İğne Problem Listesi',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)  ,
+  const  Text('Makine Arıza Listesi',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)  ,
  const SizedBox(height: 6,),
   Divider(color: Colors.grey.withOpacity(0.5),),
- NeedleProblem()
+ MachineProblem()
       
   ])) ;
   }

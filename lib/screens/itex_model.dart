@@ -11,7 +11,7 @@ class ITEXModelScreen extends StatelessWidget {
         title:const Text('ITEX Management'),
         centerTitle: false,
       ),
-      body: Padding(padding:const EdgeInsets.all(18),
+      body: Padding(padding: EdgeInsets.all(MediaQuery.of(context).size.width > 320 ? 10 : 0),
       child: Column(
         children: [
           Row(children: [
@@ -68,7 +68,9 @@ Container(
   child: Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
-      Expanded( child: Text('No',style: TextStyle(fontSize: 12,color: Theme.of(context).colorScheme.background),),),
+      Expanded( child: 
+      
+      Text('No',style: TextStyle(fontSize: 11,color: Theme.of(context).colorScheme.background),),),
           Expanded(flex: 3,child:   Text('Operasyon Adı',style: TextStyle(color: Theme.of(context).colorScheme.background,fontSize: 11,fontWeight: FontWeight.bold),) ,
           
     ),
