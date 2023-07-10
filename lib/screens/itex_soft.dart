@@ -28,7 +28,7 @@ Card(
   child: ListTile(
         title:
 const Center(
-  child:  Text('Hat Tanımlama',style: TextStyle(letterSpacing: 0.5,fontSize: 14),) ,
+  child:  Text('Hat Tanımlama',style: TextStyle(letterSpacing: 0.5,fontSize: 16),) ,
 ),
 
 

@@ -9,8 +9,7 @@ class NeedleProblemFormScreen extends StatelessWidget {
     print(width);
     return  Scaffold(
        body:
-
-      SingleChildScrollView(
+SafeArea(child: SingleChildScrollView(
         child:  Padding(padding: 
    const   EdgeInsets.all(10),
       
@@ -19,7 +18,7 @@ class NeedleProblemFormScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
     
- const  SizedBox(height: 50,),
+ const  SizedBox(height: 30,),
   const Center(
     child:Text('İğne Problem Listesi',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20,overflow: TextOverflow.ellipsis),)  , 
    ),
@@ -120,6 +119,7 @@ const SizedBox(height: 5,),
     mainAxisAlignment: MainAxisAlignment.center,
 
 
+
     
       children: [
         const Expanded(child: Text('İğne Parçaları Dedektör ile bulundu ',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),),),
@@ -136,7 +136,7 @@ Checkbox(value: false, onChanged: (val){})
 
     Row(
       children: [
-      const   Expanded(child: Text('Adı Soyadı',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),),),
+      const   Expanded(child: Text('İğne Parçaları Bulunamadı',style: TextStyle(fontSize: 11,fontWeight: FontWeight.bold),),),
         Expanded(child: 
         Row(
           
@@ -186,7 +186,8 @@ const TextField(maxLines: 4,decoration: InputDecoration(border: OutlineInputBord
       
       )
       )
-    )
+    ) )
+     
     );
   }
 }

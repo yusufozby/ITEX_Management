@@ -5,7 +5,12 @@ class ITEXQualityDetailReportScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return 
+    Scaffold(
+      appBar: AppBar(
+        title: Text('ITEX Management'),
+      ),
+      body: Column(
       children: [
    Padding(
     padding: EdgeInsets.symmetric(vertical: 10,horizontal: 5),
@@ -172,6 +177,10 @@ child: Row(
       ],
     )
     )
-    ]);
+    ]) ,
+    );
+    
+    
+   
   }
 }

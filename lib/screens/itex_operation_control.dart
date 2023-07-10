@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/screens/itex_active_operations.dart';
 import 'package:itmtechsoft/screens/itex_employee_detail.dart';
 
 class ITEXOperationControlScreen extends StatelessWidget {
@@ -38,7 +39,7 @@ class ITEXOperationControlScreen extends StatelessWidget {
                 child: TabBarView(
                   children: [
                  
-                    Icon(Icons.directions_transit),
+                  ITEXActiveOperationsScreen(),
                   ITEXEmployeeDetail(),
                   ],
                 ),

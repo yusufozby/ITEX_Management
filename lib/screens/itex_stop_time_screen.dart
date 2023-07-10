@@ -21,7 +21,7 @@ class ITEXStopTimeScreen extends StatelessWidget {
 Divider(color: Colors.black54,),
 ITEXStopTimeItem(),
 SizedBox(height: 10,),
-ITEXStopTimeItem()
+ITEXStopTimeItem()  
   ]
   
  )

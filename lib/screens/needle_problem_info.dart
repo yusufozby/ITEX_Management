@@ -13,8 +13,8 @@ class NeedleProblemInfoScreen extends StatelessWidget {
     return  Scaffold(
      
       body:
-
-      SingleChildScrollView(
+      SafeArea(child: 
+        SingleChildScrollView(
         child:  Padding(padding: 
     const  EdgeInsets.all(10),
       
@@ -114,6 +114,9 @@ const  Row(
     
     ]),), 
       )
+      )
+
+    
      
  
     );

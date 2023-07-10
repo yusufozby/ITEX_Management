@@ -9,7 +9,8 @@ import 'package:itmtechsoft/screens/itex_detail.dart';
 import 'package:itmtechsoft/screens/itex_etutoperation.dart';
 import 'package:itmtechsoft/screens/itex_model.dart';
 import 'package:itmtechsoft/screens/itex_operation_control.dart';
-import 'package:itmtechsoft/screens/itex_quality_control.dart';
+
+import 'package:itmtechsoft/screens/itex_quality_detail_report.dart';
 import 'package:itmtechsoft/screens/itex_stop_time_screen.dart';
 
 final List<ITEXLine> ITEXModelsList =  [
@@ -27,7 +28,7 @@ enum Options {modelList,timer,etutOperation,qualityManagement,operator}
 const navigatorOptions = {
   Options.modelList :  ITEXModelScreen(),
   Options.etutOperation : ITEXEtutOperationScreen(),
-  Options.qualityManagement :ITEXQualityControlScreen(),
+  Options.qualityManagement :ITEXQualityDetailReportScreen(),
   
 
 

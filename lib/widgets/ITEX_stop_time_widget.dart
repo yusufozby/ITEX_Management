@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/screens/itex_time_list.dart';
 
 
 
@@ -49,13 +50,16 @@ AlertDialog(
 
     return Card(
   margin:const EdgeInsets.all(0),
-  child: InkWell(
-    onTap: deleteItem,
+ 
+    
      
 
     child:
    Padding(padding:const EdgeInsets.all(10),
-    child:    Row(
+    child: 
+    
+    Column(
+      children: [    Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
 
@@ -70,7 +74,7 @@ Text('Adı Soyadı',style: TextStyle(fontWeight: FontWeight.bold,height: 2),),
 Text('Mola Zaman',style: TextStyle(fontWeight: FontWeight.bold,height: 2),),
 Text('Başlama Zaman',style: TextStyle(fontWeight: FontWeight.bold,height: 2),),
 Text('Bitiş Zaman',style: TextStyle(fontWeight: FontWeight.bold,height: 2),),
-Text('Toplam Çalışma Süresi',style: TextStyle(fontWeight: FontWeight.bold,height: 2),),
+Text('Toplam Çalışma',style: TextStyle(fontWeight: FontWeight.bold,height: 2),),
 
           ],
         )
@@ -95,16 +99,58 @@ const Text('540',style: TextStyle(fontWeight: FontWeight.bold,height: 2,color: C
 
 
         ),
-   
+
+
+
+
+
       ],
     
     ),
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+ 
+Expanded(child: 
+
+
+  Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    mainAxisSize: MainAxisSize.max,
+      children: [
+
+ElevatedButton(onPressed: deleteItem, child: Text('Onayla'),style: ElevatedButton.styleFrom(
+  backgroundColor: Colors.green
+)) ,
+
+
+      ],
+    ) ),
+Expanded(child: 
+Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    ElevatedButton(onPressed: (){
+      Navigator.of(context).push(MaterialPageRoute(builder: (ctx) =>const ITEXTimeListScreen()));
+    }, child:const Text('Değiştir'))
+  ],
+)
+
+),
+
+  ],
+)
+    
+    ],
+    )
+   
     )
     
  
-  ),
+  )
 
-)
+
+
 ;
   }
 }
