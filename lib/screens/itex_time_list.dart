@@ -20,14 +20,11 @@ class ITEXTimeListScreen extends StatelessWidget {
           ),
           Divider(color: Colors.grey.withOpacity(0.4),),
           const SizedBox(height: 25,),
-
-           ITEXTimeReason(),
-
+Expanded(child:     ListView.builder(
       
-           ITEXTimeReason(),
-           ITEXTimeReason(),
-           ITEXTimeReason(),
-           ITEXTimeReason(),
+     itemCount: 25 ,itemBuilder: (context, index) => ITEXTimeReason(),)  ),
+     
+
    
       
        

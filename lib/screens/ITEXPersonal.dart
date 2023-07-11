@@ -144,9 +144,7 @@ class ITEXPersonal extends StatelessWidget {
                               Container(
                                   color: Colors.white,
                               height: 300,
-                                  constraints: BoxConstraints(
-                                    minHeight: 200
-                                  ),
+                               
                                   child: TabBarView(
                                     children: [
                                     DailyPerformance(),

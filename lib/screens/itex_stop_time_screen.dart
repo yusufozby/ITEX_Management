@@ -8,7 +8,9 @@ class ITEXStopTimeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
- body:const Padding(
+ body:
+ SingleChildScrollView(
+  child:   Padding(
   padding:  EdgeInsets.all(7),
   child:   Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,14 +21,29 @@ class ITEXStopTimeScreen extends StatelessWidget {
  SizedBox(height: 20,),
  Text('04/07/2023',style: TextStyle(fontSize: 20),),
 Divider(color: Colors.black54,),
+
+ListView.builder(itemBuilder: (context, index) => 
+Column(
+  children: [
 ITEXStopTimeItem(),
-SizedBox(height: 10,),
-ITEXStopTimeItem()  
+const SizedBox(height: 10,)
+  ],
+),
+
+physics: NeverScrollableScrollPhysics(),shrinkWrap: true,itemCount: 20,
+
+
+)
+
+
+
   ]
   
  )
  
+ ) ,
  )
+
  );
   }
 }

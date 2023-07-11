@@ -14,7 +14,7 @@ class DailyPerformance extends StatelessWidget {
         DailyPerformansHeader(),
 ListView.builder(
 shrinkWrap: true,
-itemCount: 25,
+itemCount: 50,
 physics: NeverScrollableScrollPhysics(),
 itemBuilder: (ctx,index) => DailyPerformansItem())
 

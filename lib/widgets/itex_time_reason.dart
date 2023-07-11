@@ -51,7 +51,10 @@ AlertDialog(
 
 
 
-    return GestureDetector(
+    return 
+    
+    
+    GestureDetector(
   onTap:changeTimeReason,
   child: 
      Container(
