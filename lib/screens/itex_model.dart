@@ -102,8 +102,7 @@ Container(
   ),
 ),
 
-           const ITEXModelItem(),
-          const  ITEXModelItem(),
+   Expanded(child: ListView.builder(itemBuilder: (ctx,index) => ITEXModelItem(),itemCount: 100,))
           
    
         ],

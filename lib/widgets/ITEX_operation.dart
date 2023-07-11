@@ -50,7 +50,7 @@ void changePassword(){
     
      Column(
       children: [
-        Padding( padding: const EdgeInsets.all(0),child:     Row(
+          Row(
       children: [
         Expanded(child: Text('Selcan koşmaz'.toUpperCase(),style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
         Expanded(child: Text('Etiket tarama'.toUpperCase(),style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)),
@@ -73,7 +73,7 @@ void changePassword(){
         ),
 
       ],
-    ),),
+    ),
 
     Divider(height: 2,color: Colors.grey,)
       ],

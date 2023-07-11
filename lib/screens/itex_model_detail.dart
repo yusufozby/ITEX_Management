@@ -88,7 +88,32 @@ const SizedBox(height: 30,)
     ],
   ),
 ),
- const  ITEXOperation() ,
+Expanded(child: SingleChildScrollView(
+  child: Column(
+    children: [
+      ITEXOperation(),
+       ITEXOperation(),ITEXOperation(),
+       ITEXOperation(),
+         ITEXOperation(),
+       ITEXOperation(),ITEXOperation(),
+       ITEXOperation(),
+          ITEXOperation(),
+       ITEXOperation(),ITEXOperation(),
+       ITEXOperation(),
+         ITEXOperation(),
+       ITEXOperation(),ITEXOperation(),
+       ITEXOperation(),
+          ITEXOperation(),
+       ITEXOperation(),ITEXOperation(),
+       ITEXOperation(),
+         ITEXOperation(),
+       ITEXOperation(),ITEXOperation(),
+       ITEXOperation(),
+    ],
+  ),
+))
+
+
 
 
      

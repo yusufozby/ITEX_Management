@@ -6,22 +6,23 @@ class DailyPerformance extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
-      child:     Padding(
+    return 
+           Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
         DailyPerformansHeader(),
-ListView.builder(
-shrinkWrap: true,
-itemCount: 50,
-physics: NeverScrollableScrollPhysics(),
-itemBuilder: (ctx,index) => DailyPerformansItem())
+Expanded(child:ListView.builder(
+
+itemCount: 100,
+
+itemBuilder: (ctx,index) => DailyPerformansItem()) ),        
+
 
             ],
           ),
-         )   ,
-    )
+         )  
+    
     
 
   
