@@ -1,15 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/widgets/Daily_performance_item.dart';
 
 class DailyPerformance extends StatelessWidget {
   const DailyPerformance({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return  SingleChildScrollView(
+      child:     Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Container(
+        DailyPerformansHeader(),
+ListView.builder(
+shrinkWrap: true,
+itemCount: 25,
+physics: NeverScrollableScrollPhysics(),
+itemBuilder: (ctx,index) => DailyPerformansItem())
+
+            ],
+          ),
+         )   ,
+    )
+    
+
+  
+          
+        ;
+  }
+}
+
+class DailyPerformansHeader extends StatelessWidget {
+  const DailyPerformansHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return     Container(
               width: double.infinity,
               decoration: BoxDecoration(
                   border: Border.all(width: 3, color: Colors.grey),
@@ -100,82 +126,6 @@ class DailyPerformance extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            Container(
-              child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(3),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Expanded(
-                            child: Center(
-                          child: Text(
-                            '1',
-                            style: TextStyle(
-                                fontSize: 11, fontWeight: FontWeight.bold),
-                          ),
-                        )),
-                        Expanded(
-                          child: Center(
-                            child: Text(
-                              'YENİ OPERASYON',
-                              style: TextStyle(
-                                  fontSize: 11, fontWeight: FontWeight.bold),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Center(
-                            child: Text(
-                              '1.1',
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.bold),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                            child: Center(
-                          child: Text(
-                            '0',
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.bold),
-                          ),
-                        )),
-                        Expanded(
-                          child: Center(
-                            child: Text(
-                              '0',
-                              style: TextStyle(
-                                  fontSize: 11, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                            child: Center(
-                          child: Center(
-                            child: Text(
-                              '0',
-                              style: TextStyle(
-                                  fontSize: 11, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        )),
-                        Expanded(child: Center(child: Text('%0'))),
-                      ],
-                    ),
-                  ),
-                  Divider(
-                    color: Colors.grey,
-                    height: 0,
-                  )
-                ],
-              ),
-            ),
-          ],
-        ));
+            );
   }
 }

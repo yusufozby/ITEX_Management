@@ -11,15 +11,15 @@ class ITEXPersonal extends StatelessWidget {
   Widget build(BuildContext context) {
 
     print(MediaQuery.of(context).size.width);
-    return MaterialApp(
-      home: Scaffold(
+    return 
+     Scaffold(
         appBar: AppBar(
        
           title:const Text('ITEX Management'),
           backgroundColor:const Color.fromRGBO(0, 0, 139, 1),
           
         ),
-        body: Column(
+        body: SingleChildScrollView( child: Column(
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,6 +115,7 @@ class ITEXPersonal extends StatelessWidget {
                     ],
                   ),
                 ),
+            
               ],
             ),
          const SizedBox(height: 5,),
@@ -142,11 +143,17 @@ class ITEXPersonal extends StatelessWidget {
                               ),
                               Container(
                                   color: Colors.white,
-                                  height: 200,
+                              height: 300,
+                                  constraints: BoxConstraints(
+                                    minHeight: 200
+                                  ),
                                   child: TabBarView(
                                     children: [
-                                      DailyPerformance(),
-                                    StopReason()
+                                    DailyPerformance(),
+                                  SingleChildScrollView(
+                                    child:   StopReason(),
+                                  )   
+                                  
                                     ],
                                   ))
                             ],
@@ -155,8 +162,8 @@ class ITEXPersonal extends StatelessWidget {
             
           ],
         ),
-      ),
-    );
+      ));
+   
   }
 }
 
