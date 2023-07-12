@@ -148,9 +148,9 @@ class ITEXPersonal extends StatelessWidget {
                                   child: TabBarView(
                                     children: [
                                     DailyPerformance(),
-                                  SingleChildScrollView(
-                                    child:   StopReason(),
-                                  )   
+                                
+                                     StopReason(),
+                                     
                                   
                                     ],
                                   ))

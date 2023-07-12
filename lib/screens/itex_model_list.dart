@@ -73,9 +73,7 @@ Container(
   ),
 ),
 
-ITEXModelListItem(),
-ITEXModelListItem(),
-ITEXModelListItem(),
+Expanded(child: ListView.builder(itemBuilder: (ctx,i)=>ITEXModelListItem(),itemCount: 30,))
 
   
   ]

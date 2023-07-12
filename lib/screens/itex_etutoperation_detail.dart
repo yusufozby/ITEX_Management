@@ -80,7 +80,7 @@ Container(
     ],
   ),
 ),
-const ITEXOperationDetailItem()
+Expanded(child:ListView.builder(itemBuilder: (context, index) => ITEXOperationDetailItem(),itemCount: 60,)  )
         ],
       ),)
       

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:itmtechsoft/widgets/itex_etut_start.dart';
 import 'package:itmtechsoft/widgets/stopwatch_widget.dart';
 
 
@@ -11,8 +12,8 @@ class ITEXEtutStartScreen extends StatelessWidget {
       appBar: AppBar(
         title:const Text('ITEX Management'),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
+     
+        body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
@@ -362,56 +363,14 @@ class ITEXEtutStartScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Center(
-                        child: Text(
-                      '4',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                  Expanded(
-                    child: Center(
-                        child: Text(
-                      '00.00.01',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                  Expanded(
-                    child: Center(
-                        child: Text(
-                      '00.00.18',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                  Expanded(
-                    child: Center(
-                        child: Text(
-                      '1',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                  Expanded(
-                    child: Center(
-                        child: Checkbox(
-                            //only check box
-                            value: check1, //unchecked
-                            onChanged: (bool? value) {
-                              //value returned when checkbox is clicked
-                              setState(() {
-                                check1 = value;
-                              });
-                            })),
-                  ),
-                ],
-              )
+              Expanded(child:  ListView.builder(itemBuilder: (ctx,index) => ITEXEtutStart(),itemCount: 20,))
+           
             ],
           ),
         ),
-      ),
-    );
+      );
+    
   }
 
-  void setState(Null Function() param0) {}
+
 }

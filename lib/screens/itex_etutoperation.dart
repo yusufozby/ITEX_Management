@@ -85,12 +85,11 @@ const SizedBox(height: 20,),         Container(
   ),
 ),
 
-  
-   const  Column(
-      children: [
-     ITEXEtutOperation(),
-        ITEXEtutOperation(),
-]),
+  Expanded(child: 
+ListView.builder(itemBuilder: (ctx,index)=>ITEXEtutOperation(),itemCount: 95,)
+
+  )
+
 
 
       ],

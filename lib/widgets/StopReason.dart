@@ -6,8 +6,7 @@ class StopReason extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child:  Padding(
+    return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
@@ -69,13 +68,15 @@ class StopReason extends StatelessWidget {
               ],
             ),
           ),
-  ListView.builder(itemBuilder: (ctx,index) => StopReasonItem(),
-  itemCount: 60,shrinkWrap: true,physics: NeverScrollableScrollPhysics(),)
+          Expanded(child:   ListView.builder(itemBuilder: (ctx,index) => StopReasonItem(),
+  itemCount: 60)
+          )
+
 
         ],
       ),
-    )
     );
+    
     
     
   }
