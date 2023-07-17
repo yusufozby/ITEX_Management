@@ -102,7 +102,8 @@ Container(
   ),
 ),
 
-   Expanded(child: ListView.builder(itemBuilder: (ctx,index) => ITEXModelItem(),itemCount: 100,))
+   Expanded(child: ListView.builder(itemBuilder: (ctx,index) => ITEXModelItem(),itemCount: 100,)),
+   
           
    
         ],

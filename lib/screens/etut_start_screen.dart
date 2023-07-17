@@ -7,7 +7,7 @@ class ITEXEtutStartScreen extends StatelessWidget {
   const ITEXEtutStartScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    bool? check1 = false;
+ 
     return Scaffold(
       appBar: AppBar(
         title:const Text('ITEX Management'),

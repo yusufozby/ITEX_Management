@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:itmtechsoft/screens/machine_problem_info.dart';
-import 'package:itmtechsoft/screens/needle_problem_info.dart';
+
 
 
 class MachineProblem extends StatelessWidget {

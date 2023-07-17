@@ -1,29 +1,39 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:itmtechsoft/l10n/l10n.dart';
+
 import 'package:itmtechsoft/models/Setting.dart';
+import 'package:itmtechsoft/providers/locale_provider.dart';
 import 'package:itmtechsoft/widgets/setting_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 
 
 
- List<String> languages = ['Türkçe','English'];
-class SettingsScreen extends StatefulWidget {
+class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
-
   @override
-  State<SettingsScreen> createState() => _SettingsState();
+  ConsumerState<SettingsScreen> createState() => _SettingsState();
 }
 
-class _SettingsState extends State<SettingsScreen> {
-  String initialLanguage = languages[0];
+class _SettingsState extends ConsumerState<SettingsScreen> {
+  
   
 final serverIdController = TextEditingController();
 final portIdController = TextEditingController();
 final usernameController = TextEditingController();
 final passwordController = TextEditingController();
 
-String selectedLanguage = languages[0];
 
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+ 
+  }
 
 void openServerId(){
 
@@ -67,6 +77,7 @@ void openServerId(){
 
 }
 void openPortId(){
+ 
   showDialog(context: context, 
   useRootNavigator: false,
   builder: (ctx) => 
@@ -111,21 +122,21 @@ showDialog(
   
   return AlertDialog(
     content: StatefulBuilder(
-      
+    
       builder: (context, setState) {
        return Column(
  mainAxisSize: MainAxisSize.min,
  children: [
   ListTile(
-    title:  Text(languages[0]),
-    leading: Radio(activeColor: Theme.of(context).colorScheme.primary,groupValue: selectedLanguage,value: languages[0],onChanged: (val){
-      setState(() => selectedLanguage = val.toString());
+    title:const  Text('Türkçe'),
+    leading: Radio(activeColor: Theme.of(context).colorScheme.primary,groupValue: ref.watch(localeProvider) ,value:  L10n.all[0],onChanged: (val){
+         ref.read(localeProvider.notifier).setLocale(val!);
     },),
   ),
    ListTile(
-    title:  Text(languages[1]),
-    leading: Radio(activeColor: Theme.of(context).colorScheme.primary,groupValue: selectedLanguage,value: languages[1],onChanged: (val){
-      setState(() => selectedLanguage = val.toString());
+    title: const Text('English'),
+    leading: Radio(activeColor: Theme.of(context).colorScheme.primary,groupValue: ref.watch(localeProvider),value: L10n.all[1],onChanged: (val){
+     ref.read(localeProvider.notifier).setLocale(val!);
     },),
   ),
 
@@ -134,12 +145,9 @@ showDialog(
        );
     },),
         actions: [
-      TextButton(onPressed: (){
-      Navigator.pop(context);
-      },
-    child:const Text('Cancel')),
+     
     TextButton(onPressed: (){
-
+Navigator.of(context).pop();
     }, child:const Text('OK'))
     ]
   );
@@ -235,6 +243,7 @@ void changePassword(){
 
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
 
 
@@ -242,7 +251,7 @@ body:
 SafeArea(child: 
 Column(
 children: [
-SettingItem(setting:Setting(title: 'Server ID', subtitle: 'IP Server where the  webservice is available') , openModal:openServerId),
+SettingItem(setting:Setting(title: 'Server ID', subtitle: AppLocalizations.of(context)!.language) , openModal:openServerId),
 SettingItem(setting:Setting(title: 'Port ID', subtitle: 'Port Server where the  webservice is available') , openModal:openPortId),
 SettingItem(setting:Setting(title: 'Language', subtitle: 'Select your language') , openModal:openLanguage),  
 SettingItem(setting:Setting(title: 'User Name ', subtitle: 'User Name Used to Save Data') , openModal:changeUsername), 

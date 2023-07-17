@@ -3,7 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:itmtechsoft/widgets/machine_problem.dart';
-import 'package:itmtechsoft/widgets/needle_problem.dart';
+
 
 class MachineProblemListScreen extends StatelessWidget {
   const MachineProblemListScreen({super.key});
