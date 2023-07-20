@@ -40,7 +40,11 @@ ITEXLine({
   required this.dailyGoal,
   required this.productQty,
   required this.plannedQty
-}): id = uuid.v4();
 
+  
+}): id = uuid.v4();
+factory ITEXLine.fromJson(Map<String,dynamic> json) {
+  return ITEXLine(aimedOrder: 3, quantity: 2, lastDate:2, dailyGoal: 3, productQty: 3, plannedQty: 32);
+}
 } 
 

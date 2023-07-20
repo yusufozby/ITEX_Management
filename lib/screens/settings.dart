@@ -1,10 +1,13 @@
 
 
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:itmtechsoft/l10n/l10n.dart';
 
 import 'package:itmtechsoft/models/Setting.dart';
+import 'package:itmtechsoft/providers/connection_provider.dart';
 import 'package:itmtechsoft/providers/locale_provider.dart';
 import 'package:itmtechsoft/widgets/setting_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -20,18 +23,24 @@ class SettingsScreen extends ConsumerStatefulWidget {
 }
 
 class _SettingsState extends ConsumerState<SettingsScreen> {
-  
-  
-final serverIdController = TextEditingController();
-final portIdController = TextEditingController();
+
+
+late final serverIdController = TextEditingController(text:ref.read(connectionProvider)['server']);
+late final portIdController = TextEditingController(text:ref.read(connectionProvider)['port']);
 final usernameController = TextEditingController();
 final passwordController = TextEditingController();
 
 
 @override
-  void initState() {
-    // TODO: implement initState
+
+
+
+
+  void initState()  {
+    
     super.initState();
+    ref.read(connectionProvider.notifier).getConnection();
+
  
   }
 
@@ -67,10 +76,12 @@ void openServerId(){
       TextButton(onPressed: (){
       Navigator.pop(context);
       },
-    child:const Text('Cancel')),
+    child:Text(AppLocalizations.of(context)!.cancel)),
     TextButton(onPressed: (){
-
-    }, child:const Text('OK'))
+      ref.read(connectionProvider.notifier).setIPv4(serverIdController.text);
+            Navigator.pop(context);
+        
+    }, child:Text(AppLocalizations.of(context)!.ok))
     ]
     ));
 
@@ -107,10 +118,11 @@ void openPortId(){
       TextButton(onPressed: (){
       Navigator.pop(context);
       },
-    child:const Text('Cancel')),
+    child:Text(AppLocalizations.of(context)!.cancel)),
     TextButton(onPressed: (){
-
-    }, child:const Text('OK'))
+  ref.read(connectionProvider.notifier).setPort(portIdController.text);
+    Navigator.pop(context);
+    }, child:Text(AppLocalizations.of(context)!.ok))
     ]
     ));
 }
@@ -163,7 +175,7 @@ void changeUsername(){
     shape:const RoundedRectangleBorder(
                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
-    title:const Text('Username'),
+    title: Text(AppLocalizations.of(context)!.username),
     content:StatefulBuilder(
       
    builder: (context,StateSetter setState)  {
@@ -185,10 +197,10 @@ void changeUsername(){
       TextButton(onPressed: (){
       Navigator.pop(context);
       },
-    child:const Text('Cancel')),
+    child: Text(AppLocalizations.of(context)!.cancel)),
     TextButton(onPressed: (){
 
-    }, child:const Text('OK'))
+    }, child:Text(AppLocalizations.of(context)!.ok))
     ]
     ));
 }
@@ -201,7 +213,7 @@ void changePassword(){
     shape:const RoundedRectangleBorder(
                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
-    title:const Text('Password'),
+    title:Text(AppLocalizations.of(context)!.password),
     content:StatefulBuilder(
       
    builder: (context,StateSetter setState)  {
@@ -223,10 +235,10 @@ void changePassword(){
       TextButton(onPressed: (){
       Navigator.pop(context);
       },
-    child:const Text('Cancel')),
+    child:Text(AppLocalizations.of(context)!.cancel)),
     TextButton(onPressed: (){
 
-    }, child:const Text('OK'))
+    }, child: Text(AppLocalizations.of(context)!.ok))
     ]
     ));
 }
@@ -236,8 +248,12 @@ void changePassword(){
 
 @override
   void dispose() {
-    super.dispose();
+   
     serverIdController.dispose();
+    portIdController.dispose();
+    usernameController.dispose();
+    passwordController.dispose();
+     super.dispose();
   }
 
 
@@ -248,16 +264,17 @@ void changePassword(){
 
 
 body:
+
 SafeArea(child: 
 Column(
 children: [
-SettingItem(setting:Setting(title: 'Server ID', subtitle: AppLocalizations.of(context)!.language) , openModal:openServerId),
-SettingItem(setting:Setting(title: 'Port ID', subtitle: 'Port Server where the  webservice is available') , openModal:openPortId),
-SettingItem(setting:Setting(title: 'Language', subtitle: 'Select your language') , openModal:openLanguage),  
-SettingItem(setting:Setting(title: 'User Name ', subtitle: 'User Name Used to Save Data') , openModal:changeUsername), 
-SettingItem(setting:Setting(title: 'Password', subtitle: 'Password Used to Save Data') , openModal:changePassword), 
+SettingItem(setting:Setting(title: 'Server ID', subtitle: AppLocalizations.of(context)!.serviceDescription) , openModal:openServerId),
+SettingItem(setting:Setting(title: 'Port ID',subtitle:AppLocalizations.of(context)!.portDescription ) , openModal:openPortId),
+SettingItem(setting:Setting(title: AppLocalizations.of(context)!.language, subtitle: AppLocalizations.of(context)!.languageSelection) , openModal:openLanguage),  
+SettingItem(setting:Setting(title: AppLocalizations.of(context)!.username, subtitle: AppLocalizations.of(context)!.usernameDesc) , openModal:changeUsername), 
+SettingItem(setting:Setting(title: AppLocalizations.of(context)!.password, subtitle: AppLocalizations.of(context)!.passwordDesc) , openModal:changePassword), 
 ListTile(
-title: Text('Version',style: TextStyle(fontSize: 20,color: Colors.grey.withOpacity(0.4)),),
+title: Text(AppLocalizations.of(context)!.version,style: TextStyle(fontSize: 20,color: Colors.grey.withOpacity(0.4)),),
 subtitle: Text('2.0.5',style: TextStyle(fontSize: 16,color: Colors.grey.withOpacity(0.8)),),
  shape: Border(bottom: BorderSide(color: Colors.grey.withOpacity(0.4),width: 1.5)),
 onTap:null,

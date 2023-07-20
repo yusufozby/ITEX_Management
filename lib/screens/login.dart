@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:itmtechsoft/screens/settings.dart';
 import 'package:itmtechsoft/widgets/login_form.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Login extends StatefulWidget {
   
@@ -12,20 +12,24 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(  title:const Text('ITEX Soft Operation Control'),actions: [
+     
+      appBar: AppBar(  title:Text(AppLocalizations.of(context)!.loginTitle),actions: [
         PopupMenuButton(
        
         itemBuilder: (ctx)  {
         return   [
- const   PopupMenuItem(child: Text("Server Config"),value: 'Settings',)
+   PopupMenuItem(child: Text(AppLocalizations.of(context)!.userConfig),value: 'Settings',)
   ];
       },
       onSelected: (value) => {
-
-    Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const SettingsScreen()))
+          if(mounted){
+   Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const SettingsScreen()))
+          }
+ 
      
      },
      icon:const Icon(Icons.more_vert), 

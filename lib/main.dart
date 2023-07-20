@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -5,7 +7,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:itmtechsoft/l10n/l10n.dart';
 import 'package:itmtechsoft/providers/locale_provider.dart';
-
+import 'package:http/http.dart' as http;
 import 'package:itmtechsoft/screens/login.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -19,6 +21,12 @@ void main() {
       statusBarColor: Color.fromRGBO(0, 0, 110, 1)
     )
   );
+
+ 
+
+
+
+
   
   runApp(
   const  ProviderScope(child: App(),)
@@ -32,13 +40,34 @@ class App extends ConsumerStatefulWidget {
  
   const App({super.key});
 
+ 
+ 
+ 
   @override
+ 
+
+ 
+ 
+ 
+ 
+ 
   ConsumerState<App> createState() => _AppState();
 }
 
 class _AppState extends ConsumerState<App> {
 
   @override
+
+
+   Future<void> _fetchData() async {
+    final response = await http.get(Uri.parse('http://10.0.2.2:5000/api/Category'));
+    if (response.statusCode == 200) {
+      final body = json.decode(response.body);
+      print(body);
+    } else {
+      
+    }
+  }
 
 void getLanguages() async{
  SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -54,6 +83,9 @@ void getLanguages() async{
    
     super.initState();
     getLanguages();
+    _fetchData();
+    
+    
 
   }
   Widget build(BuildContext context) {
